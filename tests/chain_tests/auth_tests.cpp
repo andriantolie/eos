@@ -1,6 +1,8 @@
 #include <boost/test/unit_test.hpp>
 #include <eosio/testing/tester.hpp>
 #include <eosio/chain/contracts/abi_serializer.hpp>
+#include <eosio.system/eosio.system.wast.hpp>
+#include <eosio.system/eosio.system.abi.hpp>
 
 #ifdef NON_VALIDATING_TEST
 #define TESTER tester
@@ -80,6 +82,8 @@ try {
    TESTER chain;
    chain.create_account("alice");
 
+   chain.set_code(N(eosio), eosio_system_wast);
+   chain.set_abi(N(eosio), eosio_system_abi);
    // Deleting active or owner should fail
    BOOST_CHECK_THROW(chain.delete_authority("alice", "active"), action_validate_exception);
    BOOST_CHECK_THROW(chain.delete_authority("alice", "owner"), action_validate_exception);
@@ -205,6 +209,9 @@ BOOST_AUTO_TEST_CASE(link_auths) { try {
    TESTER chain;
 
    chain.create_accounts({"alice","bob"});
+   
+   chain.set_code(N(eosio), eosio_system_wast);
+   chain.set_abi(N(eosio), eosio_system_abi);
 
    const auto spending_priv_key = chain.get_private_key("alice", "spending");
    const auto spending_pub_key = spending_priv_key.get_public_key();

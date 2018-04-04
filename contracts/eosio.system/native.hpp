@@ -96,6 +96,7 @@ namespace eosiosystem {
          };
 
          static void on( const newaccount& ) {
+            print("NATIVE CALLED - newaccount\n"); //v
          }
 
          ACTION( SystemAccount, updateauth ) {
@@ -108,6 +109,7 @@ namespace eosiosystem {
          };
 
          static void on( const updateauth& ) {
+            print("NATIVE CALLED - updateauth\n"); //v
          }
 
          ACTION( SystemAccount, deleteauth ) {
@@ -118,6 +120,7 @@ namespace eosiosystem {
          };
 
          static void on( const deleteauth& ) {
+            print("NATIVE CALLED - deleteauth\n"); //v
          }
 
          ACTION( SystemAccount, linkauth ) {
@@ -130,6 +133,7 @@ namespace eosiosystem {
          };
 
          static void on( const linkauth& ) {
+            print("NATIVE CALLED - linkauth\n"); //v
          }
          
          ACTION( SystemAccount, unlinkauth ) {
@@ -141,6 +145,7 @@ namespace eosiosystem {
          };
 
          static void on( const unlinkauth& ) {
+            print("NATIVE CALLED - unlinkauth\n");
          }
 
          ACTION( SystemAccount, postrecovery ) {
@@ -152,6 +157,7 @@ namespace eosiosystem {
          };
 
          static void on( const postrecovery& ) {
+            print("NATIVE CALLED - postrecovery\n"); //v
          }
 
          ACTION( SystemAccount, passrecovery ) {
@@ -161,6 +167,7 @@ namespace eosiosystem {
          };
 
          static void on( const passrecovery& ) {
+            print("NATIVE CALLED - passrecovery\n"); //v
          }
 
          ACTION( SystemAccount, vetorecovery ) {
@@ -170,6 +177,7 @@ namespace eosiosystem {
          };
 
          static void on( const vetorecovery& ) {
+            print("NATIVE CALLED - vetorecovery\n"); //v
          }
 
          ACTION( SystemAccount, setabi ) {
@@ -180,6 +188,7 @@ namespace eosiosystem {
          };
 
          static void on( const setabi& ) {
+            print("NATIVE CALLED - setabi\n"); //v
          }
 
          struct onerror: eosio::action_meta<SystemAccount, N(onerror)>, bytes {
@@ -187,6 +196,7 @@ namespace eosiosystem {
          };
 
          static void on( const onerror& ) {
+            print("NATIVE CALLED - onerror\n");
          }
          
          ACTION( SystemAccount, canceldelay ) {
@@ -196,6 +206,7 @@ namespace eosiosystem {
          };
          
          static void on( const canceldelay& ) {
+            print("NATIVE CALLED - canceldelay\n"); //v
          }
          
          ACTION ( SystemAccount, mindelay ) {
@@ -205,6 +216,7 @@ namespace eosiosystem {
          };
          
          static void on( const mindelay& ) {
+            print("NATIVE CALLED - mindelay\n"); //v
          }
    };
 }

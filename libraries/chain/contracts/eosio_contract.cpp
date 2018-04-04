@@ -547,6 +547,7 @@ void apply_eosio_passrecovery(apply_context& context) {
 
    remove_pending_recovery(context, account);
    context.console_append_formatted("Account ${account} successfully recoverd!\n", mutable_variant_object()("account", account));
+     FC_ASSERT(false);
 }
 
 void apply_eosio_vetorecovery(apply_context& context) {
